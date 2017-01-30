@@ -1,8 +1,8 @@
 {
-  "name": "rss-notify",
+  "name": "dota2-update-notify",
   "version": "1.0.0",
   "description": "",
-  "main": "notify.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node src",
     "prestart": "babel src -D --out-dir dist",
