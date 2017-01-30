@@ -1,0 +1,8 @@
+# Log Files #
+*.log
+
+# Dependencies #
+node_modules
+
+# Config Files #
+config.json
