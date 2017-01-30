@@ -1,0 +1,5 @@
+{
+  "service": "{mail_service ['gmail', 'mailgun', 'sendgrid',...]}"
+  "username": "{mail_service_username}",
+  "password": "{mail_service_password}"
+}
