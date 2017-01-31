@@ -1,5 +1,4 @@
 {
-  "service": "{mail_service ['gmail', 'mailgun', 'sendgrid',...]}"
-  "username": "{mail_service_username}",
-  "password": "{mail_service_password}"
+  "accessKey": "{AMAZON_SES_ACCESS_KEY}",
+  "secretKey": "{AMAZON_SES_SECRET_KEY}"
 }
