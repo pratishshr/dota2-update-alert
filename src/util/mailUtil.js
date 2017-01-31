@@ -4,18 +4,15 @@
 
 import nodemailer from 'nodemailer';
 import ses from 'nodemailer-ses-transport';
-import * as loggerUtil from './loggerUtil';
+
 /**
  * {
+ *  accessKey: 'SES accessKEY',
+ *  secretKey: 'SES secretKEY',
  *  from:'"NAME" <noreply@email.com>'
  *  to: 'test@test.com,
- *  service: 'gmail',
- *  auth: {
- *     user: username,
- *     pass: password
- *   },
- * subject: 'This is a test subject',
- * htmlContent: '<h1> Html content </h1>'
+ *  subject: 'This is a test subject',
+ *  htmlContent: '<h1> Html content </h1>'
  * }
  * @param options
  */
@@ -35,10 +32,10 @@ export function sendMail(options) {
   return new Promise((resolve, reject) => {
     transporter.sendMail(mailOptions, function(error, info) {
       if (error) {
-        loggerUtil.error(error);
         reject(error);
         return;
       }
+      
       resolve('Message sent');
     });
   })

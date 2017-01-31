@@ -74,6 +74,8 @@ function sendMail(items) {
 
     return mailUtil.sendMail(options).then((responseInfo) => {
       loggerUtil.info(responseInfo)
+    }).catch((error) => {
+      loggerUtil.error(error);
     })
   });
 }
