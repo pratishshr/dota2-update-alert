@@ -4,19 +4,19 @@
 
 ### Steps
 
-1. Install Dependencies
+- **Install Dependencies**
 ```bash
  $ npm install
 ```
 
-2. Rename config.json.template to config.json and add required keys
+- **Rename config.json.template to config.json and add required keys**
 
-3. Run script
+- **Run script**
 ```bash
 $ npm start
 ```
 
-4. Run and watch script 
+- **Run and watch script**
 ```bash
 $ npm run dev
 ```
