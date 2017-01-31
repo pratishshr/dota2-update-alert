@@ -3,7 +3,8 @@
  */
 
 import nodemailer from 'nodemailer';
-
+import ses from 'nodemailer-ses-transport';
+import * as loggerUtil from './loggerUtil';
 /**
  * {
  *  from:'"NAME" <noreply@email.com>'
@@ -19,11 +20,11 @@ import nodemailer from 'nodemailer';
  * @param options
  */
 export function sendMail(options) {
-  var transporter = nodemailer.createTransport({
-    service: options.service,
-    auth: options.auth
-  });
-  
+  var transporter = nodemailer.createTransport(ses({
+    accessKeyId: options.accessKey,
+    secretAccessKey: options.secretKey
+  }));
+
   var mailOptions = {
     from: options.from,
     to: options.to,
@@ -34,9 +35,11 @@ export function sendMail(options) {
   return new Promise((resolve, reject) => {
     transporter.sendMail(mailOptions, function(error, info) {
       if (error) {
+        loggerUtil.error(error);
         reject(error);
+        return;
       }
-      resolve('Message sent: ' + info.response);
+      resolve('Message sent');
     });
   })
 }

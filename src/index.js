@@ -64,12 +64,8 @@ function getNewItems(requiredItems) {
 function sendMail(items) {
   items.forEach((item) => {
     let options = {
-      host: config.host,
-      port: config.port,
-      auth: {
-        user: config.username,
-        pass: config.password
-      },
+      accessKey: config.accessKey,
+      secretKey: config.secretKey,
       from: '"Dota2LF" <dota2-noreply@lftechnology.com>',
       to: 'dota2@lftechnology.com',
       subject: 'Dota 2 Update',
