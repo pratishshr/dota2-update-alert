@@ -64,12 +64,14 @@ function getNewItems(requiredItems) {
 function sendMail(items) {
   items.forEach((item) => {
     let options = {
-      host: 'localhost',
-      port: 25,
-      tls: {
-        rejectUnauthorized: false
+      host: config.host,
+      port: config.port,
+      service: config.service,
+      auth: {
+        user: config.username,
+        pass: config.password
       },
-      from: '"dota2LF" <dota2LF@lftechnology.com>',
+      from: '"Dota2LF" <dota2-noreply@lftechnology.com>',
       to: 'dota2@lftechnology.com',
       subject: 'Dota 2 Update',
       htmlContent: generateTemplate(item)
