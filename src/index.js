@@ -66,7 +66,6 @@ function sendMail(items) {
     let options = {
       host: config.host,
       port: config.port,
-      service: config.service,
       auth: {
         user: config.username,
         pass: config.password
