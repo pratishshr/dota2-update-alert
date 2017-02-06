@@ -1,6 +1,7 @@
 /**
  * @author Pratish Shrestha <pratishshrestha@lftechnology.com>
  */
+import moment from 'moment';
 import  { parseString } from 'xml2js';
 
 import * as httpUtil from './util/httpUtil';
@@ -42,7 +43,7 @@ function parseRSSFeed(feed) {
         reject();
       }
       let requiredItems = result['rdf:RDF'].item.filter((item) => {
-        return item.title[0].includes('Dota 2 Update');
+        return item.title[0].includes('Dota 2 Update') && moment(item['dc:date']).isSameOrAfter(moment(), 'day');
       });
 
       resolve(requiredItems);

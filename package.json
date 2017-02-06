@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "nodemon --exec babel-node src",
     "prestart": "babel src -D --out-dir dist",
-    "start": "forever start dist"
+    "start": "forever start dist",
+    "stop": "forever stopall"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.15.3",
     "feedparser": "^2.1.0",
+    "moment": "^2.17.1",
     "nodemailer": "^2.7.2",
     "nodemailer-ses-transport": "^1.5.0",
     "winston": "^2.3.1",
