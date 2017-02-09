@@ -43,7 +43,7 @@ function parseRSSFeed(feed) {
         reject();
       }
       let requiredItems = result['rdf:RDF'].item.filter((item) => {
-        return item.title[0].includes('Dota 2 Update') && moment(item['dc:date']).isSameOrAfter(moment(), 'day');
+        return item.title[0].includes('Dota 2 Update') && moment(item['dc:date'][0]).isSameOrAfter(moment(), 'day');
       });
 
       resolve(requiredItems);
