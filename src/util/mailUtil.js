@@ -1,7 +1,3 @@
-/**
- * @author Pratish Shrestha <pratishshrestha@lftechnology.com>
- */
-
 import nodemailer from 'nodemailer';
 import ses from 'nodemailer-ses-transport';
 
@@ -17,10 +13,12 @@ import ses from 'nodemailer-ses-transport';
  * @param options
  */
 export function sendMail(options) {
-  var transporter = nodemailer.createTransport(ses({
-    accessKeyId: options.accessKey,
-    secretAccessKey: options.secretKey
-  }));
+  var transporter = nodemailer.createTransport(
+    ses({
+      accessKeyId: options.accessKey,
+      secretAccessKey: options.secretKey
+    })
+  );
 
   var mailOptions = {
     from: options.from,
@@ -35,9 +33,8 @@ export function sendMail(options) {
         reject(error);
         return;
       }
-      
+
       resolve('Message sent');
     });
-  })
+  });
 }
-
